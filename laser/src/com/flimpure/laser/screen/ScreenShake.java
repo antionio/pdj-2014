@@ -60,7 +60,8 @@ public class ScreenShake {
 		quakeTime = 0f;
 		camera.position.set(originalCameraPosition);
 		camera.update();
-		callback.run();
+        if (callback != null)
+		    callback.run();
 	}
 
 }

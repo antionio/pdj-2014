@@ -95,6 +95,10 @@ public class GameScreen extends Basic2DScreen {
 					
 					player.laserTarget.x = beam.x;
 					player.laserTarget.y = beam.y;
+
+                    if (!screenShake.active) {
+                        screenShake.activate(0.1f, null);
+                    }
 				}
 			}
 		}
