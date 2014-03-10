@@ -4,15 +4,17 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.flimpure.laser.assets.Assets;
+import com.flimpure.laser.screen.GameScreen;
 
 public abstract class Entity {
 
+    protected GameScreen gameScreen;
     protected float x,y,width, height;
-    private final Rectangle bounds;
-    private EntityState state;
-    private Direction direction = Direction.DOWN;
-    private final Vector2 accel = new Vector2(0f, 0f);
-    private final Vector2 vel = new Vector2(0f, 0f);
+    protected final Rectangle bounds;
+    protected EntityState state;
+    protected Direction direction = Direction.DOWN;
+    protected final Vector2 accel = new Vector2(0f, 0f);
+    protected final Vector2 vel = new Vector2(0f, 0f);
     public float stateTime = 0f;
     public float pause = 0f;
 
@@ -23,7 +25,8 @@ public abstract class Entity {
     protected static final float INVULNERABLE_TIME_MIN = 1.5f;
     protected static final float BLINK_TICK_MAX = 0.1f;
 
-    protected Entity(float x, float y, float width, float height) {
+    protected Entity(float x, float y, float width, float height, GameScreen gameScreen) {
+        this.gameScreen = gameScreen;
         this.x = x;
         this.y = y;
         this.width = width;

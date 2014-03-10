@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15f7f333-3d88-4693-934e-71c9939bfd75" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/entity/EnemyColor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../laser-android/assets/data/Thumbs.db" afterPath="$PROJECT_DIR$/../laser-android/assets/data/Thumbs.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../laser-android/assets/data/objects_all.png" afterPath="$PROJECT_DIR$/../laser-android/assets/data/objects_all.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/assets/Assets.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/assets/Assets.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Entity.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Entity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java" />
@@ -20,14 +20,14 @@
     <file path="/FontBig.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394444708182" ignored="false" />
     <file path="/Basic2DScreen.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394444738264" ignored="false" />
     <file path="/LaserGame.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394449130783" ignored="false" />
-    <file path="/GameScreen.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394475214681" ignored="false" />
-    <file path="/Entity.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394459339290" ignored="false" />
+    <file path="/GameScreen.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394476145578" ignored="false" />
+    <file path="/Entity.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394476091170" ignored="false" />
     <file path="/EntityState.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394445113875" ignored="false" />
     <file path="/Direction.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394445134241" ignored="false" />
-    <file path="/Player.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394460726193" ignored="false" />
+    <file path="/Player.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394476103237" ignored="false" />
     <file path="/Main.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394448031580" ignored="false" />
     <file path="/Assets.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394459675726" ignored="false" />
-    <file path="/Enemy.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394475584142" ignored="false" />
+    <file path="/Enemy.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394476435980" ignored="false" />
     <file path="/EnemyColor.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394474866715" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +135,7 @@
       <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="75" selection-start="705" selection-end="705" vertical-scroll-proportion="0.0">
+            <state line="12" column="45" selection-start="402" selection-end="412" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,7 +146,7 @@
       <file leaf-file-name="Enemy.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="352" selection-end="352" vertical-scroll-proportion="0.42805755">
+            <state line="23" column="16" selection-start="635" selection-end="635" vertical-scroll-proportion="0.41906476">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -177,7 +177,7 @@
       <file leaf-file-name="Entity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="43" selection-start="705" selection-end="705" vertical-scroll-proportion="0.0">
+            <state line="8" column="22" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -199,10 +199,10 @@
       <file leaf-file-name="GameScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="28" selection-start="921" selection-end="921" vertical-scroll-proportion="0.0">
+            <state line="29" column="65" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#657#665#0" expanded="true" />
+                <element signature="e#655#663#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -235,12 +235,12 @@
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/util/Xbox360Pad.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/LaserGame.java" />
         <option value="$PROJECT_DIR$/../laser-desktop/src/com/flimpure/laser/tools/PackTextures.java" />
-        <option value="$PROJECT_DIR$/src/com/flimpure/laser/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/assets/Assets.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/entity/EnemyType.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/entity/EnemyColor.java" />
-        <option value="$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java" />
+        <option value="$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java" />
+        <option value="$PROJECT_DIR$/src/com/flimpure/laser/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java" />
       </list>
     </option>
@@ -816,15 +816,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/assets/Assets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/EnemyColor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="12" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0">
@@ -834,17 +825,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="28" selection-start="921" selection-end="921" vertical-scroll-proportion="0.0">
+        <state line="29" column="65" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#657#665#0" expanded="true" />
+            <element signature="e#655#663#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/assets/Assets.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="75" selection-start="705" selection-end="705" vertical-scroll-proportion="0.0">
+        <state line="9" column="0" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -853,7 +844,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="43" selection-start="705" selection-end="705" vertical-scroll-proportion="0.0">
+        <state line="8" column="22" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="45" selection-start="402" selection-end="412" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -862,7 +862,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="352" selection-end="352" vertical-scroll-proportion="0.42805755">
+        <state line="23" column="16" selection-start="635" selection-end="635" vertical-scroll-proportion="0.41906476">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

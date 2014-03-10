@@ -15,8 +15,8 @@ import com.flimpure.laser.entity.*;
 public class GameScreen extends Basic2DScreen {
 
 	private final ScreenShake screenShake;
-	private final Player player;
-    private final Array<Entity> entities = new Array<Entity>();
+	public final Player player;
+    public final Array<Entity> entities = new Array<Entity>();
 
 	private ShapeRenderer sr;
 
@@ -25,9 +25,9 @@ public class GameScreen extends Basic2DScreen {
 		camera.position.set(12f, 8f, 0f);
 		camera.update();
 		screenShake = new ScreenShake(camera);
-		player = new Player(8f, 8f, 1f, 1f);
-        entities.add(new Enemy(12f, 8f, EnemyColor.RED));
-        entities.add(new Enemy(12f, 10f, EnemyColor.BLUE));
+		player = new Player(8f, 8f, 1f, 1f, this);
+        entities.add(new Enemy(12f, 8f, EnemyColor.RED, this));
+        entities.add(new Enemy(12f, 10f, EnemyColor.BLUE, this));
 
 		sr = new ShapeRenderer();
 	}

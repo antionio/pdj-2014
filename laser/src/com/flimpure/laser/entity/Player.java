@@ -3,13 +3,14 @@ package com.flimpure.laser.entity;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.flimpure.laser.assets.Assets;
+import com.flimpure.laser.screen.GameScreen;
 
 public class Player extends Entity {
 
 	public Vector2 laserTarget;
 
-    public Player(float x, float y, float width, float height) {
-        super(x, y, width, height);
+    public Player(float x, float y, float width, float height, GameScreen gameScreen) {
+        super(x, y, width, height, gameScreen);
         laserTarget = new Vector2(0.0f, 0.0f);
     }
 
