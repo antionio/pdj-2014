@@ -1,0 +1,19 @@
+
+objects_all.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+dummy
+  rotate: false
+  xy: 4, 4
+  size: 18, 18
+  orig: 18, 18
+  offset: 0, 0
+  index: -1
+no, you're dumb!
+  rotate: false
+  xy: 26, 4
+  size: 18, 18
+  orig: 18, 18
+  offset: 0, 0
+  index: -1
