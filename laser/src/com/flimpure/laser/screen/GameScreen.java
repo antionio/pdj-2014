@@ -99,7 +99,11 @@ public class GameScreen extends Basic2DScreen {
                     if (!screenShake.active) {
                         screenShake.activate(0.1f, null);
                     }
-				}
+
+                    Assets.getGameSound(Assets.SOUND_LASER).loop(0.5f);
+				} else {
+                    Assets.getGameSound(Assets.SOUND_LASER).stop();
+                }
 			}
 		}
 	}

@@ -17,6 +17,8 @@ public class Assets {
     private static final String ATLAS_FILEPATH_OBJECTS_ALL = FOLDER_DATA
             + ATLAS_FILE_OBJECTS_ALL + ".atlas";
 
+    public static final String SOUND_LASER = FOLDER_SOUNDS + "laser.wav";
+
     public static final String TEXTURE_FONT_BIG_BLACK = FOLDER_DATA
             + "font-big-black.png";
     public static final String TEXTURE_FONT_BIG_WHITE = FOLDER_DATA
@@ -38,6 +40,8 @@ public class Assets {
         assetManager.load(TEXTURE_FONT_BIG_WHITE, Texture.class);
         assetManager.load(TEXTURE_FONT_SMALL_BLACK, Texture.class);
         assetManager.load(TEXTURE_FONT_SMALL_WHITE, Texture.class);
+
+        assetManager.load(SOUND_LASER, Sound.class);
 
         finishLoading();
         setupAssets();
