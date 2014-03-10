@@ -78,8 +78,17 @@ public class GameScreen extends Basic2DScreen {
 					Vector3 v2 = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0.0f);
 					camera.unproject(v2);
 
-					player.laserTarget.x = v2.x;
-					player.laserTarget.y = v2.y;
+					float xd = v2.x - player.x();
+					float yd = v2.y - player.y();
+					Vector2 rel = new Vector2(xd, yd);
+					
+					// no targets, draw an infinite laser
+					Vector2 beam = new Vector2(50.0f, 0.0f);
+					beam.rotate(rel.angle());
+					beam.add(player.x(), player.y());
+					
+					player.laserTarget.x = beam.x;
+					player.laserTarget.y = beam.y;
 				}
 			}
 		}
@@ -97,15 +106,14 @@ public class GameScreen extends Basic2DScreen {
 
 		// shoot some laser!
 		if (Gdx.input.isButtonPressed(0)) {
-			Vector2 v1 = new Vector2(player.x() + 0.5f, player.y() + 0.5f);
+			Vector2 v1 = new Vector2(player.x(), player.y());
 			Vector2 v2 = player.laserTarget;
-			
+
 			// check if the beam hits anything
 			sr.setProjectionMatrix(camera.combined);
 			sr.setColor(Color.RED);
 			sr.begin(ShapeType.Filled);
 			sr.rectLine(v1, v2, 0.25f);
-			sr.rectLine(v2, Vector2.Zero, 0.25f);
 
 			sr.end();
 		}
@@ -123,3 +131,4 @@ public class GameScreen extends Basic2DScreen {
 		Gdx.input.setInputProcessor(this);
 	}
 }
+//
