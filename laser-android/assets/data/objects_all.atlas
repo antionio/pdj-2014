@@ -3,6 +3,13 @@ objects_all.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+background-temporary
+  rotate: false
+  xy: 4, 124
+  size: 960, 600
+  orig: 960, 600
+  offset: 0, 0
+  index: -1
 dummy
   rotate: false
   xy: 4, 4
@@ -10,10 +17,24 @@ dummy
   orig: 18, 18
   offset: 0, 0
   index: -1
-no, you're dumb!
+lense
   rotate: false
-  xy: 26, 4
-  size: 18, 18
-  orig: 18, 18
+  xy: 968, 690
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: -1
+lense_hue
+  rotate: false
+  xy: 4, 26
+  size: 94, 94
+  orig: 94, 94
+  offset: 0, 0
+  index: -1
+lense_shadow
+  rotate: false
+  xy: 102, 108
+  size: 22, 12
+  orig: 22, 12
   offset: 0, 0
   index: -1

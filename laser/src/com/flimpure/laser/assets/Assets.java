@@ -1,6 +1,7 @@
 package com.flimpure.laser.assets;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.assets.loaders.TextureLoader;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -71,7 +72,7 @@ public class Assets {
 
     public static TextureRegion getGameObject(String objectName) {
         return new TextureRegion(get(ATLAS_FILEPATH_OBJECTS_ALL,
-                TextureAtlas.class).findRegion(objectName), 1, 1, 16, 16);
+                TextureAtlas.class).findRegion(objectName), 0, 0, 34, 34);
     }
 
     public static Sound getGameSound(String soundName) {

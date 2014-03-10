@@ -10,8 +10,8 @@ public class PackTextures {
 
 	public static void main(String[] args) {
 		final TexturePacker.Settings settings = new TexturePacker.Settings();
-		settings.maxWidth = 1024;
-		settings.maxHeight = 1024;
+		settings.maxWidth = 2048;
+		settings.maxHeight = 2048;
 		settings.paddingX = 4;
 		settings.paddingY = 4;
 		settings.bleed = true;

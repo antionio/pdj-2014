@@ -2,12 +2,11 @@ package com.flimpure.laser.screen;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.controllers.Controller;
 import com.flimpure.laser.LaserGame;
+import com.flimpure.laser.assets.Assets;
 import com.flimpure.laser.entity.Direction;
 import com.flimpure.laser.entity.Entity;
 import com.flimpure.laser.entity.Player;
-import com.flimpure.laser.util.Xbox360Pad;
 
 public class GameScreen extends Basic2DScreen {
 
@@ -16,10 +15,10 @@ public class GameScreen extends Basic2DScreen {
 
     public GameScreen(LaserGame game) {
         super(game, 24, 16);
-        camera.position.set(6f, 4f, 0f);
+        camera.position.set(12f, 8f, 0f);
         camera.update();
         screenShake = new ScreenShake(camera);
-        player = new Player(2f,2f,1f,1f);
+        player = new Player(8f,8f,1f,1f);
     }
 
     @Override
@@ -64,6 +63,9 @@ public class GameScreen extends Basic2DScreen {
     public void renderScreen(float delta) {
         spriteBatch.setProjectionMatrix(camera.combined);
         spriteBatch.begin();
+
+        spriteBatch.draw(Assets.getFullGameObject("background-temporary"), 0, 0, 24, 16);
+
         player.render(delta, spriteBatch);
         spriteBatch.end();
     }

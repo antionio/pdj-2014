@@ -8,7 +8,7 @@ import com.flimpure.laser.assets.Assets;
 
 public abstract class Entity {
 
-    private float x,y,width, height;
+    protected float x,y,width, height;
     private final Rectangle bounds;
     private EntityState state;
     private Direction direction = Direction.DOWN;
