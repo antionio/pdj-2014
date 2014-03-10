@@ -7,16 +7,16 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.utils.Array;
 import com.flimpure.laser.LaserGame;
 import com.flimpure.laser.assets.Assets;
-import com.flimpure.laser.entity.Direction;
-import com.flimpure.laser.entity.Entity;
-import com.flimpure.laser.entity.Player;
+import com.flimpure.laser.entity.*;
 
 public class GameScreen extends Basic2DScreen {
 
 	private final ScreenShake screenShake;
 	private final Player player;
+    private final Array<Entity> entities = new Array<Entity>();
 
 	private ShapeRenderer sr;
 
@@ -26,6 +26,8 @@ public class GameScreen extends Basic2DScreen {
 		camera.update();
 		screenShake = new ScreenShake(camera);
 		player = new Player(8f, 8f, 1f, 1f);
+        entities.add(new Enemy(12f, 8f, EnemyColor.RED));
+        entities.add(new Enemy(12f, 10f, EnemyColor.BLUE));
 
 		sr = new ShapeRenderer();
 	}
@@ -41,6 +43,10 @@ public class GameScreen extends Basic2DScreen {
 		processKeys();
 
 		player.update(fixedStep);
+
+        for (int i = 0; i < entities.size; i++) {
+            entities.get(i).update(fixedStep);
+        }
 
 		screenShake.update(fixedStep);
 	}
@@ -121,6 +127,9 @@ public class GameScreen extends Basic2DScreen {
 
 		spriteBatch.begin();
 		player.render(delta, spriteBatch);
+        for (int i = 0; i < entities.size; i++) {
+            entities.get(i).render(delta, spriteBatch);
+        }
 		spriteBatch.end();
 
 	}

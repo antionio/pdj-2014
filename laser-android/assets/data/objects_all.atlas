@@ -5,7 +5,7 @@ filter: Nearest,Nearest
 repeat: none
 background-temporary
   rotate: false
-  xy: 4, 124
+  xy: 4, 180
   size: 960, 600
   orig: 960, 600
   offset: 0, 0
@@ -17,6 +17,27 @@ dummy
   orig: 18, 18
   offset: 0, 0
   index: -1
+enemy_blue
+  rotate: false
+  xy: 968, 728
+  size: 50, 52
+  orig: 50, 52
+  offset: 0, 0
+  index: -1
+enemy_red
+  rotate: false
+  xy: 4, 26
+  size: 50, 52
+  orig: 50, 52
+  offset: 0, 0
+  index: -1
+enemy_shadow
+  rotate: false
+  xy: 102, 124
+  size: 50, 52
+  orig: 50, 52
+  offset: 0, 0
+  index: -1
 lense
   rotate: false
   xy: 968, 690
@@ -26,14 +47,14 @@ lense
   index: -1
 lense_hue
   rotate: false
-  xy: 4, 26
+  xy: 4, 82
   size: 94, 94
   orig: 94, 94
   offset: 0, 0
   index: -1
 lense_shadow
   rotate: false
-  xy: 102, 108
+  xy: 58, 66
   size: 22, 12
   orig: 22, 12
   offset: 0, 0

@@ -17,7 +17,7 @@ public class Player extends Entity {
     public void render(float delta, SpriteBatch batch) {
     	float x = x() - (width * 0.5f);
     	float y = y() - (width * 0.5f);
-        batch.draw(Assets.getFullGameObject("lense_shadow"), x + 0.1f, y - 0.5f, 0.8f, 0.3f);
+        batch.draw(Assets.getFullGameObject("lense_shadow"), x + 0.15f, y - 0.5f, 0.7f, 0.35f);
         batch.draw(Assets.getFullGameObject("lense"), x, y, width, height);
         batch.draw(Assets.getFullGameObject("lense_hue"), x - 1f, y - 1f, 3f, 3f);
     }

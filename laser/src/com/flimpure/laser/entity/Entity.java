@@ -1,6 +1,5 @@
 package com.flimpure.laser.entity;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
@@ -17,9 +16,8 @@ public abstract class Entity {
     public float stateTime = 0f;
     public float pause = 0f;
 
-    public static final float ACCEL_MULTIPLIER = 2f;
-    public static final float ACCEL_MAX = 0.01f;
-    public static final float VEL_MAX = 0.2f;
+    public static final float ACCEL_MAX = 0.005f;
+    public static final float VEL_MAX = 0.05f;
     public static final float INERTIA = 5f;
     private static final float MIN_WALK_VELOCITY = 0.001f;
     protected static final float INVULNERABLE_TIME_MIN = 1.5f;
