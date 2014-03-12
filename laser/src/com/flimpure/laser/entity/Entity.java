@@ -122,41 +122,45 @@ public abstract class Entity {
     protected final Vector2[] tiles = new Vector2[] { new Vector2(), new Vector2(), new Vector2(), new Vector2() };
 
     protected void fetchCollidableRects(int[][] tiles) {
-        int p1x = (int) bounds.x;
-        int p1y = (int) Math.floor(bounds.y);
-        int p2x = (int) (bounds.x + bounds.width);
-        int p2y = (int) Math.floor(bounds.y);
-        int p3x = (int) (bounds.x + bounds.width);
-        int p3y = (int) (bounds.y + bounds.height);
-        int p4x = (int) bounds.x;
-        int p4y = (int) (bounds.y + bounds.height);
+        try {
+            int p1x = (int) bounds.x;
+            int p1y = (int) Math.floor(bounds.y);
+            int p2x = (int) (bounds.x + bounds.width);
+            int p2y = (int) Math.floor(bounds.y);
+            int p3x = (int) (bounds.x + bounds.width);
+            int p3y = (int) (bounds.y + bounds.height);
+            int p4x = (int) bounds.x;
+            int p4y = (int) (bounds.y + bounds.height);
 
-        Tile tile1 = Tile.tiles[tiles[p1x][p1y]];
-        Tile tile2 = Tile.tiles[tiles[p2x][p2y]];
-        Tile tile3 = Tile.tiles[tiles[p3x][p3y]];
-        Tile tile4 = Tile.tiles[tiles[p4x][p4y]];
+            Tile tile1 = Tile.tiles[tiles[p1x][p1y]];
+            Tile tile2 = Tile.tiles[tiles[p2x][p2y]];
+            Tile tile3 = Tile.tiles[tiles[p3x][p3y]];
+            Tile tile4 = Tile.tiles[tiles[p4x][p4y]];
 
-        this.tiles[0].set(p1x, p1y);
-        this.tiles[1].set(p2x, p2y);
-        this.tiles[2].set(p3x, p3y);
-        this.tiles[3].set(p4x, p4y);
+            this.tiles[0].set(p1x, p1y);
+            this.tiles[1].set(p2x, p2y);
+            this.tiles[2].set(p3x, p3y);
+            this.tiles[3].set(p4x, p4y);
 
-        if (tile1.isCollidable())
-            r[0].set(p1x, p1y, 1, 1);
-        else
-            r[0].set(-1, -1, 0, 0);
-        if (tile2.isCollidable())
-            r[1].set(p2x, p2y, 1, 1);
-        else
-            r[1].set(-1, -1, 0, 0);
-        if (tile3.isCollidable())
-            r[2].set(p3x, p3y, 1, 1);
-        else
-            r[2].set(-1, -1, 0, 0);
-        if (tile4.isCollidable())
-            r[3].set(p4x, p4y, 1, 1);
-        else
-            r[3].set(-1, -1, 0, 0);
+            if (tile1.isCollidable())
+                r[0].set(p1x, p1y, 1, 1);
+            else
+                r[0].set(-1, -1, 0, 0);
+            if (tile2.isCollidable())
+                r[1].set(p2x, p2y, 1, 1);
+            else
+                r[1].set(-1, -1, 0, 0);
+            if (tile3.isCollidable())
+                r[2].set(p3x, p3y, 1, 1);
+            else
+                r[2].set(-1, -1, 0, 0);
+            if (tile4.isCollidable())
+                r[3].set(p4x, p4y, 1, 1);
+            else
+                r[3].set(-1, -1, 0, 0);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            Gdx.app.log("Creature", "Player went off screen");
+        }
 
     }
 
