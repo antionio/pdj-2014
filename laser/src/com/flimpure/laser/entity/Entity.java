@@ -9,7 +9,7 @@ import com.flimpure.laser.screen.GameScreen;
 public abstract class Entity {
 
     protected GameScreen gameScreen;
-    protected float x,y,width, height;
+    public float x,y,width, height;
     protected final Rectangle bounds;
     protected EntityState state;
     protected Direction direction = Direction.DOWN;
@@ -107,4 +107,13 @@ public abstract class Entity {
     public boolean isAlive() {
         return state != EntityState.DEAD && state != EntityState.DYING;
     }
+    
+    protected Vector2 position = new Vector2();
+    
+    public Vector2 getPosition() {
+    	position.x = x;
+    	position.y = y;
+    	return position;
+    }
+
 }

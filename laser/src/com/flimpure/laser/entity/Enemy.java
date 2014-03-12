@@ -36,6 +36,9 @@ public class Enemy extends Entity {
 
     @Override
     public void render(float delta, SpriteBatch batch) {
+    	float x = this.x - width * 0.5f;
+    	float y = this.y - height * 0.5f;
+
         batch.draw(Assets.getFullGameObject("enemy_shadow"), x, y - 0.5f, width, height);
 
         if (color == EnemyColor.BLUE) {
