@@ -75,7 +75,7 @@ public class Assets {
 
     public static TextureRegion getGameObject(String objectName) {
         return new TextureRegion(get(ATLAS_FILEPATH_OBJECTS_ALL,
-                TextureAtlas.class).findRegion(objectName), 0, 0, 34, 34);
+                TextureAtlas.class).findRegion(objectName), 0, 0, 16, 16);
     }
 
     public static Sound getGameSound(String soundName) {

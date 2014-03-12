@@ -10,6 +10,11 @@ public class FloorTile extends Tile {
 
     @Override
     public void render(float delta, SpriteBatch batch, float x, float y) {
-        batch.draw(Assets.getFullGameObject("floor"), x, y, 1f, 1f);
+        batch.draw(Assets.getGameObject("floor"), x, y, 1f, 1f);
+    }
+
+    @Override
+    public boolean isCollidable() {
+        return false;
     }
 }

@@ -1,6 +1,5 @@
 package com.flimpure.laser.entity;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.flimpure.laser.assets.Assets;
@@ -17,7 +16,7 @@ public class Enemy extends Entity {
 
 
     private final Vector2 playerPos = new Vector2();
-    private final Vector2 mummyPos = new Vector2();
+    private final Vector2 enemyPos = new Vector2();
 
     @Override
     public float getMaxVelocity() {
@@ -29,9 +28,9 @@ public class Enemy extends Entity {
         super.update(fixedStep);
 
         playerPos.set(gameScreen.player.x, gameScreen.player.y);
-        mummyPos.set(x, y);
+        enemyPos.set(x, y);
 
-        accel.set(playerPos.sub(mummyPos));
+        accel.set(playerPos.sub(enemyPos));
     }
 
     @Override

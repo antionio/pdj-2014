@@ -33,7 +33,7 @@ import com.flimpure.laser.LaserGame;
 public abstract class Basic2DScreen extends InputAdapter implements Screen {
 
 	protected LaserGame game;
-	protected final OrthographicCamera camera;
+	public final OrthographicCamera camera;
 	protected final SpriteBatch spriteBatch = new SpriteBatch();
 	protected final Matrix4 normalProjection = new Matrix4();
 

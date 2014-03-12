@@ -4,17 +4,25 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Array;
 import com.flimpure.laser.entity.Entity;
 import com.flimpure.laser.level.tiles.Tile;
+import com.flimpure.laser.screen.GameScreen;
 
 public class Dungeon {
 
+    private final GameScreen gameScreen;
     private final Array<Entity> entities = new Array<Entity>();
     private final int width, height;
-    private final int[][] tileMap;
+    public final int[][] tileMap;
 
-    public Dungeon() {
+
+    public Dungeon(GameScreen gameScreen) {
+        this.gameScreen = gameScreen;
         width = 96;
         height = 48;
         tileMap = DungeonGenerator.getTileMap(width, height);
+
+//        Light light = new ConeLight(rayHandler, 128, Color.WHITE, 60, 0, 34,
+//                270, 100);
+
     }
 
     public void update(float fixedStep) {
@@ -32,6 +40,9 @@ public class Dungeon {
 //                }
             }
         }
+    }
+
+    public void dispose() {
     }
 
 }

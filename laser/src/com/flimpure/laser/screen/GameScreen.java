@@ -1,10 +1,7 @@
 package com.flimpure.laser.screen;
 
-import java.util.Arrays;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
@@ -15,11 +12,6 @@ import com.flimpure.laser.LaserGame;
 import com.flimpure.laser.assets.Assets;
 import com.flimpure.laser.entity.*;
 import com.flimpure.laser.level.Dungeon;
-import com.flimpure.laser.entity.Direction;
-import com.flimpure.laser.entity.Enemy;
-import com.flimpure.laser.entity.EnemyColor;
-import com.flimpure.laser.entity.Entity;
-import com.flimpure.laser.entity.Player;
 
 public class GameScreen extends Basic2DScreen {
 
@@ -27,7 +19,7 @@ public class GameScreen extends Basic2DScreen {
 	public final Player player;
 	public final Array<Entity> entities = new Array<Entity>();
 
-    private final Dungeon dungeon;
+    public final Dungeon dungeon;
     protected final Vector2 playerPos = new Vector2();
     protected final Vector2 cameraLerp = new Vector2();
 
@@ -35,6 +27,9 @@ public class GameScreen extends Basic2DScreen {
 
 	public GameScreen(LaserGame game) {
 		super(game, 24, 16);
+
+        dungeon = new Dungeon(this);
+
 		camera.position.set(12f, 8f, 0f);
 		camera.update();
 		screenShake = new ScreenShake(camera);
@@ -44,13 +39,13 @@ public class GameScreen extends Basic2DScreen {
 
 		sr = new ShapeRenderer();
 
-        dungeon = new Dungeon();
         cameraLerp.set(player.x, player.y);
 	}
 
 	@Override
 	public void dispose() {
 		super.dispose();
+        dungeon.dispose();
 		sr.dispose();
 	}
 
@@ -210,6 +205,7 @@ public class GameScreen extends Basic2DScreen {
 		spriteBatch.end();
 
 		sr.begin(ShapeType.Line);
+        sr.rect(player.bounds.x, player.bounds.y, player.bounds.width, player.bounds.height);
 		for (Entity e : entities) {
 			sr.circle(e.x, e.y, 0.5f, 10);
 		}
@@ -221,5 +217,7 @@ public class GameScreen extends Basic2DScreen {
 		super.show();
 		Gdx.input.setInputProcessor(this);
 	}
+
+
 }
 //
