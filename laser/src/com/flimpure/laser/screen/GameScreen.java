@@ -61,14 +61,13 @@ public class GameScreen extends Basic2DScreen {
 
         dungeon.update(fixedStep);
 
-		screenShake.update(fixedStep);
-
-
         // update camera position
         playerPos.set(player.x, player.y);
         cameraLerp.lerp(playerPos, 5f * fixedStep);
         camera.position.set(cameraLerp.x, cameraLerp.y, 0f);
         camera.update();
+
+        screenShake.update(fixedStep);
 	}
 
 	private void processKeys() {

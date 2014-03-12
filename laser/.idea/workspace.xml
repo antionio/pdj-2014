@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15f7f333-3d88-4693-934e-71c9939bfd75" name="Default" comment="Fixed tile flickering">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/tween/Vector2Accessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../laser-android/assets/data/objects_all.png" afterPath="$PROJECT_DIR$/../laser-android/assets/data/objects_all.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/LaserGame.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/LaserGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/screen/ScreenShake.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/screen/ScreenShake.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../laser-android/assets/data/objects_all.atlas" afterPath="$PROJECT_DIR$/../laser-android/assets/data/objects_all.atlas" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,10 +126,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Enemy.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Enemy.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="82" selection-start="1877" selection-end="1877" vertical-scroll-proportion="0.70197487">
+            <state line="54" column="82" selection-start="1877" selection-end="1877" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -160,7 +156,7 @@
       <file leaf-file-name="GameScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="33" selection-start="3192" selection-end="3192" vertical-scroll-proportion="-12.52">
+            <state line="69" column="24" selection-start="1887" selection-end="1887" vertical-scroll-proportion="-10.88">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -188,19 +184,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Basic2DScreen.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/Basic2DScreen.java">
+      <file leaf-file-name="ScreenShake.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/ScreenShake.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="22" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="57" column="0" selection-start="1582" selection-end="1582" vertical-scroll-proportion="0.7761194">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Assets.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/assets/Assets.java">
+      <file leaf-file-name="Basic2DScreen.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/Basic2DScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="45" selection-start="3089" selection-end="3102" vertical-scroll-proportion="0.0">
+            <state line="32" column="22" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -224,7 +222,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/flimpure/laser/screen/Basic2DScreen.java" />
         <option value="$PROJECT_DIR$/src/box2dLight/LightMap.java" />
         <option value="$PROJECT_DIR$/src/box2dLight/DirectionalLight.java" />
         <option value="$PROJECT_DIR$/src/box2dLight/PositionalLight.java" />
@@ -234,12 +231,13 @@
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/level/tiles/WallTile.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/level/Dungeon.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/level/tiles/Tile.java" />
-        <option value="$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/tween/Vector2Accessor.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/LaserGame.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java" />
+        <option value="$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java" />
+        <option value="$PROJECT_DIR$/src/com/flimpure/laser/screen/ScreenShake.java" />
       </list>
     </option>
   </component>
@@ -292,6 +290,104 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tween" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="screen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -670,13 +766,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/libs/gdx-sources.jar!/com/badlogic/gdx/physics/box2d/CircleShape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="11" selection-start="978" selection-end="978" vertical-scroll-proportion="0.05745063">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LaserGame.gwt.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -735,32 +824,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="33" selection-start="3192" selection-end="3192" vertical-scroll-proportion="-12.52">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="36" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/LaserGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="69" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/tween/Vector2Accessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -779,10 +845,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/LaserGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="69" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/tween/Vector2Accessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="82" selection-start="1877" selection-end="1877" vertical-scroll-proportion="0.70197487">
+        <state line="54" column="82" selection-start="1877" selection-end="1877" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="24" selection-start="1887" selection-end="1887" vertical-scroll-proportion="-10.88">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/ScreenShake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="0" selection-start="1582" selection-end="1582" vertical-scroll-proportion="0.7761194">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
