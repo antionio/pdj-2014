@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15f7f333-3d88-4693-934e-71c9939bfd75" name="Default" comment="Fixed tile flickering">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Entity.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Entity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/tween/Vector2Accessor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../laser-android/assets/data/objects_all.png" afterPath="$PROJECT_DIR$/../laser-android/assets/data/objects_all.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/LaserGame.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/LaserGame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../laser-android/assets/data/objects_all.atlas" afterPath="$PROJECT_DIR$/../laser-android/assets/data/objects_all.atlas" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -15,10 +21,10 @@
     <file path="/Entity.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394651825703" ignored="false" />
     <file path="/EntityState.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394445113875" ignored="false" />
     <file path="/Direction.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394445134241" ignored="false" />
-    <file path="/Player.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394476103237" ignored="false" />
+    <file path="/Player.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394654294429" ignored="false" />
     <file path="/Main.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394448031580" ignored="false" />
     <file path="/Assets.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394477755264" ignored="false" />
-    <file path="/Enemy.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394476435980" ignored="false" />
+    <file path="/Enemy.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394654433725" ignored="false" />
     <file path="/EnemyColor.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394474866715" ignored="false" />
     <file path="/ScreenShake.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394476718766" ignored="false" />
     <file path="/DungeonGenerator.java" changelist="15f7f333-3d88-4693-934e-71c9939bfd75" time="1394645962964" ignored="false" />
@@ -106,19 +112,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Entity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Entity.java">
+      <file leaf-file-name="LaserGame.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/LaserGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="162" column="9" selection-start="5313" selection-end="5313" vertical-scroll-proportion="0.64849627">
+            <state line="20" column="69" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Enemy.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Vector2Accessor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/tween/Vector2Accessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Enemy.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="40" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0">
+            <state line="54" column="82" selection-start="1877" selection-end="1877" vertical-scroll-proportion="0.70197487">
               <folding />
             </state>
           </provider>
@@ -127,7 +142,7 @@
       <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="8" selection-start="545" selection-end="613" vertical-scroll-proportion="0.0">
+            <state line="26" column="4" selection-start="945" selection-end="1075" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -145,7 +160,7 @@
       <file leaf-file-name="GameScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="207" column="93" selection-start="5690" selection-end="5690" vertical-scroll-proportion="-17.0">
+            <state line="115" column="33" selection-start="3192" selection-end="3192" vertical-scroll-proportion="-12.52">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -164,6 +179,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Entity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Entity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="36" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Basic2DScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/Basic2DScreen.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -177,15 +201,6 @@
         <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/assets/Assets.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="75" column="45" selection-start="3089" selection-end="3102" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FloorTile.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/level/tiles/FloorTile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="74" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -209,8 +224,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/flimpure/laser/level/FloorTile.java" />
-        <option value="$PROJECT_DIR$/src/com/flimpure/laser/level/DungeonGenerator.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/screen/Basic2DScreen.java" />
         <option value="$PROJECT_DIR$/src/box2dLight/LightMap.java" />
         <option value="$PROJECT_DIR$/src/box2dLight/DirectionalLight.java" />
@@ -221,10 +234,12 @@
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/level/tiles/WallTile.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/level/Dungeon.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/level/tiles/Tile.java" />
-        <option value="$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java" />
-        <option value="$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java" />
         <option value="$PROJECT_DIR$/src/com/flimpure/laser/entity/Entity.java" />
+        <option value="$PROJECT_DIR$/src/com/flimpure/laser/tween/Vector2Accessor.java" />
+        <option value="$PROJECT_DIR$/src/com/flimpure/laser/LaserGame.java" />
+        <option value="$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java" />
+        <option value="$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java" />
       </list>
     </option>
   </component>
@@ -268,6 +283,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="laser" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -506,8 +531,8 @@
     <recent_temporary>
       <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Application.DungeonGenerator" />
-        <item index="2" class="java.lang.String" itemvalue="Application.PackTextures" />
+        <item index="1" class="java.lang.String" itemvalue="Application.PackTextures" />
+        <item index="2" class="java.lang.String" itemvalue="Application.DungeonGenerator" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -548,7 +573,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -570,7 +595,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24418604" sideWeight="0.671659" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24418604" sideWeight="0.671659" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.328341" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -645,13 +670,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/libs/gdx-sources.jar!/com/badlogic/gdx/physics/box2d/PolygonShape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="35" selection-start="873" selection-end="873" vertical-scroll-proportion="0.18312387">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/libs/gdx-sources.jar!/com/badlogic/gdx/physics/box2d/CircleShape.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="11" selection-start="978" selection-end="978" vertical-scroll-proportion="0.05745063">
@@ -710,20 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="8" selection-start="545" selection-end="613" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="40" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/libs/gdx-sources.jar!/com/badlogic/gdx/graphics/glutils/ShapeRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="615" column="0" selection-start="23438" selection-end="23438" vertical-scroll-proportion="0.4847397">
@@ -733,7 +737,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="207" column="93" selection-start="5690" selection-end="5690" vertical-scroll-proportion="-17.0">
+        <state line="115" column="33" selection-start="3192" selection-end="3192" vertical-scroll-proportion="-12.52">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -742,7 +746,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="9" selection-start="5313" selection-end="5313" vertical-scroll-proportion="0.64849627">
+        <state line="12" column="36" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/LaserGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="69" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/tween/Vector2Accessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/tween-engine-api-sources.jar!/aurelienribon/tweenengine/Tween.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="490" column="60" selection-start="16106" selection-end="16106" vertical-scroll-proportion="0.27109516">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="4" selection-start="945" selection-end="1075" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/entity/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="82" selection-start="1877" selection-end="1877" vertical-scroll-proportion="0.70197487">
           <folding />
         </state>
       </provider>

@@ -1,19 +1,27 @@
 package com.flimpure.laser.entity;
 
+import aurelienribon.tweenengine.Tween;
+import aurelienribon.tweenengine.TweenManager;
+import aurelienribon.tweenengine.equations.Cubic;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.flimpure.laser.assets.Assets;
 import com.flimpure.laser.screen.GameScreen;
+import com.flimpure.laser.tween.Vector2Accessor;
 
 public class Enemy extends Entity {
 
     private EnemyColor color;
+    private final TweenManager tweenManager = new TweenManager();
+    private final Vector2 floatOffset = new Vector2();
 
     public Enemy(float x, float y, EnemyColor color, GameScreen gameScreen) {
         super(x, y, 1f, 1f, gameScreen);
         this.color = color;
-    }
 
+        Tween.to(floatOffset, Vector2Accessor.POSITION_Y, 1f).target(0.05f)
+                .ease(Cubic.INOUT).repeatYoyo(Tween.INFINITY, 0f).start(tweenManager);
+    }
 
     private final Vector2 playerPos = new Vector2();
     private final Vector2 enemyPos = new Vector2();
@@ -25,6 +33,7 @@ public class Enemy extends Entity {
 
     @Override
     public void update(float fixedStep) {
+        tweenManager.update(fixedStep);
         super.update(fixedStep);
 
         playerPos.set(gameScreen.player.x, gameScreen.player.y);
@@ -41,9 +50,9 @@ public class Enemy extends Entity {
         batch.draw(Assets.getFullGameObject("enemy_shadow"), x, y - 0.5f, width, height);
 
         if (color == EnemyColor.BLUE) {
-            batch.draw(Assets.getFullGameObject("enemy_blue"), x, y, width, height + 0.2f);
+            batch.draw(Assets.getFullGameObject("enemy_blue"), x, y + floatOffset.y, width, height + 0.2f);
         } else if (color == EnemyColor.RED) {
-            batch.draw(Assets.getFullGameObject("enemy_red"), x, y, width, height + 0.2f);
+            batch.draw(Assets.getFullGameObject("enemy_red"), x, y + floatOffset.y, width, height + 0.2f);
         }
     }
 }
