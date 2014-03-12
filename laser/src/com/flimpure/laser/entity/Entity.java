@@ -107,4 +107,13 @@ public abstract class Entity {
     public boolean isAlive() {
         return state != EntityState.DEAD && state != EntityState.DYING;
     }
+    
+    protected Vector2 position = new Vector2();
+    
+    public Vector2 getPosition() {
+    	position.x = x;
+    	position.y = y;
+    	return position;
+    }
+
 }
