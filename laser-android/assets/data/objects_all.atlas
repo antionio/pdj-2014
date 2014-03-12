@@ -38,6 +38,13 @@ enemy_shadow
   orig: 50, 52
   offset: 0, 0
   index: -1
+floor
+  rotate: false
+  xy: 58, 60
+  size: 18, 18
+  orig: 18, 18
+  offset: 0, 0
+  index: -1
 lense
   rotate: false
   xy: 968, 690
@@ -54,8 +61,15 @@ lense_hue
   index: -1
 lense_shadow
   rotate: false
-  xy: 58, 66
+  xy: 156, 164
   size: 22, 12
   orig: 22, 12
+  offset: 0, 0
+  index: -1
+wall
+  rotate: false
+  xy: 102, 102
+  size: 18, 18
+  orig: 18, 18
   offset: 0, 0
   index: -1

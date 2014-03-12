@@ -9,7 +9,7 @@ import com.flimpure.laser.screen.GameScreen;
 public abstract class Entity {
 
     protected GameScreen gameScreen;
-    protected float x,y,width, height;
+    public float x,y,width, height;
     protected final Rectangle bounds;
     protected EntityState state;
     protected Direction direction = Direction.DOWN;

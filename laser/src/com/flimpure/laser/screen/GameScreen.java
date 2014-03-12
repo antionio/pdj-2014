@@ -2,6 +2,7 @@ package com.flimpure.laser.screen;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
@@ -11,12 +12,17 @@ import com.badlogic.gdx.utils.Array;
 import com.flimpure.laser.LaserGame;
 import com.flimpure.laser.assets.Assets;
 import com.flimpure.laser.entity.*;
+import com.flimpure.laser.level.Dungeon;
 
 public class GameScreen extends Basic2DScreen {
 
 	private final ScreenShake screenShake;
 	public final Player player;
     public final Array<Entity> entities = new Array<Entity>();
+
+    private final Dungeon dungeon;
+    protected final Vector2 playerPos = new Vector2();
+    protected final Vector2 cameraLerp = new Vector2();
 
 	private ShapeRenderer sr;
 
@@ -30,6 +36,9 @@ public class GameScreen extends Basic2DScreen {
         entities.add(new Enemy(12f, 10f, EnemyColor.BLUE, this));
 
 		sr = new ShapeRenderer();
+
+        dungeon = new Dungeon();
+        cameraLerp.set(player.x, player.y);
 	}
 
 	@Override
@@ -48,7 +57,16 @@ public class GameScreen extends Basic2DScreen {
             entities.get(i).update(fixedStep);
         }
 
+        dungeon.update(fixedStep);
+
 		screenShake.update(fixedStep);
+
+
+        // update camera position
+        playerPos.set(player.x, player.y);
+        cameraLerp.lerp(playerPos, 5f * fixedStep);
+        camera.position.set(cameraLerp.x, cameraLerp.y, 0f);
+        camera.update();
 	}
 
 	private void processKeys() {
@@ -100,7 +118,7 @@ public class GameScreen extends Basic2DScreen {
                         screenShake.activate(0.1f, null);
                     }
 
-                    Assets.getGameSound(Assets.SOUND_LASER).loop(0.5f);
+                    Assets.getGameSound(Assets.SOUND_LASER).loop();
 				} else {
                     Assets.getGameSound(Assets.SOUND_LASER).stop();
                 }
@@ -113,8 +131,7 @@ public class GameScreen extends Basic2DScreen {
 		spriteBatch.setProjectionMatrix(camera.combined);
 		spriteBatch.begin();
 
-		spriteBatch.draw(Assets.getFullGameObject("background-temporary"), 0,
-				0, 24, 16);
+        dungeon.render(delta, spriteBatch);
 
 		spriteBatch.end();
 
