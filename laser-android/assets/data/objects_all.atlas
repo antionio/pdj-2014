@@ -5,71 +5,78 @@ filter: Nearest,Nearest
 repeat: none
 background-temporary
   rotate: false
-  xy: 4, 180
+  xy: 4, 420
   size: 960, 600
   orig: 960, 600
   offset: 0, 0
   index: -1
+darkness
+  rotate: false
+  xy: 4, 42
+  size: 96, 48
+  orig: 96, 48
+  offset: 0, 0
+  index: -1
 dummy
   rotate: false
-  xy: 4, 4
+  xy: 104, 72
   size: 18, 18
   orig: 18, 18
   offset: 0, 0
   index: -1
 enemy_blue
   rotate: false
-  xy: 968, 728
+  xy: 968, 968
   size: 50, 52
   orig: 50, 52
   offset: 0, 0
   index: -1
 enemy_red
   rotate: false
-  xy: 4, 26
+  xy: 658, 266
   size: 50, 52
   orig: 50, 52
   offset: 0, 0
   index: -1
 enemy_shadow
   rotate: false
-  xy: 102, 124
+  xy: 756, 364
   size: 50, 52
   orig: 50, 52
   offset: 0, 0
   index: -1
 floor
   rotate: false
-  xy: 58, 60
-  size: 18, 18
-  orig: 18, 18
+  xy: 4, 94
+  size: 323, 322
+  orig: 323, 322
   offset: 0, 0
   index: -1
 lense
   rotate: false
-  xy: 968, 690
+  xy: 4, 4
   size: 34, 34
   orig: 34, 34
   offset: 0, 0
   index: -1
 lense_hue
   rotate: false
-  xy: 4, 82
+  xy: 658, 322
   size: 94, 94
   orig: 94, 94
   offset: 0, 0
   index: -1
 lense_shadow
   rotate: false
-  xy: 156, 164
+  xy: 42, 26
   size: 22, 12
   orig: 22, 12
   offset: 0, 0
   index: -1
 wall
   rotate: false
-  xy: 102, 102
-  size: 18, 18
-  orig: 18, 18
+  xy: 331, 94
+  size: 323, 322
+  orig: 323, 322
   offset: 0, 0
   index: -1

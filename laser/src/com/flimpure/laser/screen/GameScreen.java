@@ -178,6 +178,9 @@ public class GameScreen extends Basic2DScreen {
 		spriteBatch.setProjectionMatrix(camera.combined);
 		spriteBatch.begin();
 
+        spriteBatch.draw(Assets.getFullGameObject("background-temporary"), camera.position.x - 12f,
+                camera.position.y - 8f, 24f, 16f);
+
         dungeon.render(delta, spriteBatch);
 
 		spriteBatch.end();
@@ -209,6 +212,14 @@ public class GameScreen extends Basic2DScreen {
 			sr.circle(e.x, e.y, 0.5f, 10);
 		}
 		sr.end();
+
+        spriteBatch.begin();
+        final Color originalColor = spriteBatch.getColor();
+        spriteBatch.setColor(1f, 1f, 1f, 1f);
+        spriteBatch.draw(Assets.getFullGameObject("darkness"),
+                camera.position.x - 12f, camera.position.y - 8f, 24f, 16f);
+        spriteBatch.setColor(originalColor);
+        spriteBatch.end();
 	}
 
 	@Override
