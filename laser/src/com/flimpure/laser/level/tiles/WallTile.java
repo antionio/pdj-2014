@@ -10,7 +10,7 @@ public class WallTile extends Tile {
 
     @Override
     public void render(float delta, SpriteBatch batch, float x, float y) {
-        batch.draw(Assets.getFullGameObject("wall"), x, y, 1f, 1f);
+        batch.draw(Assets.getFullGameObject("wall"), x, y, 0.9f, 0.9f);
     }
 
     @Override

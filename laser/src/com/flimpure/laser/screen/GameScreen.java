@@ -178,8 +178,8 @@ public class GameScreen extends Basic2DScreen {
 		spriteBatch.setProjectionMatrix(camera.combined);
 		spriteBatch.begin();
 
-        spriteBatch.draw(Assets.getFullGameObject("background-temporary"), camera.position.x - 12f,
-                camera.position.y - 8f, 24f, 16f);
+//        spriteBatch.draw(Assets.getFullGameObject("background-temporary"), camera.position.x - 12f,
+//                camera.position.y - 8f, 24f, 16f);
 
         dungeon.render(delta, spriteBatch);
 

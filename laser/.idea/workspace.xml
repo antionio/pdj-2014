@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15f7f333-3d88-4693-934e-71c9939bfd75" name="Default" comment="Fixed tile flickering">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../laser-android/assets/data/objects_all.png" afterPath="$PROJECT_DIR$/../laser-android/assets/data/objects_all.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/level/tiles/FloorTile.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/level/tiles/FloorTile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flimpure/laser/level/tiles/WallTile.java" afterPath="$PROJECT_DIR$/src/com/flimpure/laser/level/tiles/WallTile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../laser-android/assets/data/objects_all.atlas" afterPath="$PROJECT_DIR$/../laser-android/assets/data/objects_all.atlas" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laser.iws" />
@@ -114,19 +112,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FloorTile.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FloorTile.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/level/tiles/FloorTile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="5" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0">
+            <state line="12" column="72" selection-start="387" selection-end="387" vertical-scroll-proportion="0.3357271">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameScreen.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GameScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.42857143">
+            <state line="180" column="51" selection-start="5041" selection-end="5041" vertical-scroll-proportion="-6.12">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,7 +146,7 @@
       <file leaf-file-name="WallTile.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/level/tiles/WallTile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="5" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
+            <state line="12" column="71" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -828,10 +826,12 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/level/tiles/FloorTile.java">
+    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="5" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="180" column="51" selection-start="5041" selection-end="5041" vertical-scroll-proportion="-6.12">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -846,17 +846,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/level/tiles/WallTile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="5" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
+        <state line="12" column="71" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/screen/GameScreen.java">
+    <entry file="file://$PROJECT_DIR$/src/com/flimpure/laser/level/tiles/FloorTile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.42857143">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="12" column="72" selection-start="387" selection-end="387" vertical-scroll-proportion="0.3357271">
+          <folding />
         </state>
       </provider>
     </entry>
