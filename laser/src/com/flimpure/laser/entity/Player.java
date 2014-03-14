@@ -11,7 +11,11 @@ import com.flimpure.laser.tween.Vector2Accessor;
 
 public class Player extends Entity {
 
+	/** The point where the player's laser currently fires at. */
 	public Vector2 laserTarget;
+	
+	/** Whether player is currently hitting an enemy. */
+	public boolean hitsEnemy;
 
     private final TweenManager tweenManager = new TweenManager();
     private final Vector2 floatOffset = new Vector2();
@@ -19,6 +23,7 @@ public class Player extends Entity {
     public Player(float x, float y, float width, float height, GameScreen gameScreen) {
         super(x, y, width, height, gameScreen);
         laserTarget = new Vector2(0.0f, 0.0f);
+        hitsEnemy = false;
 
         Tween.to(floatOffset, Vector2Accessor.POSITION_Y, 1f).target(0.05f)
                 .ease(Cubic.INOUT).repeatYoyo(Tween.INFINITY, 0f).start(tweenManager);

@@ -5,12 +5,20 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
+import com.badlogic.gdx.math.Intersector;
+import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.math.collision.Segment;
 import com.badlogic.gdx.utils.Array;
 import com.flimpure.laser.LaserGame;
 import com.flimpure.laser.assets.Assets;
-import com.flimpure.laser.entity.*;
+import com.flimpure.laser.entity.Direction;
+import com.flimpure.laser.entity.Enemy;
+import com.flimpure.laser.entity.EnemyColor;
+import com.flimpure.laser.entity.Entity;
+import com.flimpure.laser.entity.Player;
 import com.flimpure.laser.level.Dungeon;
 
 public class GameScreen extends Basic2DScreen {
@@ -19,16 +27,16 @@ public class GameScreen extends Basic2DScreen {
 	public final Player player;
 	public final Array<Entity> entities = new Array<Entity>();
 
-    public final Dungeon dungeon;
-    protected final Vector2 playerPos = new Vector2();
-    protected final Vector2 cameraLerp = new Vector2();
+	public final Dungeon dungeon;
+	protected final Vector2 playerPos = new Vector2();
+	protected final Vector2 cameraLerp = new Vector2();
 
 	private ShapeRenderer sr;
 
 	public GameScreen(LaserGame game) {
 		super(game, 24, 16);
 
-        dungeon = new Dungeon(this);
+		dungeon = new Dungeon(this);
 
 		camera.position.set(12f, 8f, 0f);
 		camera.update();
@@ -39,13 +47,13 @@ public class GameScreen extends Basic2DScreen {
 
 		sr = new ShapeRenderer();
 
-        cameraLerp.set(player.x, player.y);
+		cameraLerp.set(player.x, player.y);
 	}
 
 	@Override
 	public void dispose() {
 		super.dispose();
-        dungeon.dispose();
+		dungeon.dispose();
 		sr.dispose();
 	}
 
@@ -56,18 +64,18 @@ public class GameScreen extends Basic2DScreen {
 		player.update(fixedStep);
 
 		for (int i = 0; i < entities.size; i++) {
-			entities.get(i).update(fixedStep);
+			// entities.get(i).update(fixedStep);
 		}
 
-        dungeon.update(fixedStep);
+		dungeon.update(fixedStep);
 
-        // update camera position
-        playerPos.set(player.x, player.y);
-        cameraLerp.lerp(playerPos, 5f * fixedStep);
-        camera.position.set(cameraLerp.x, cameraLerp.y, 0f);
-        camera.update();
+		// update camera position
+		playerPos.set(player.x, player.y);
+		cameraLerp.lerp(playerPos, 5f * fixedStep);
+		camera.position.set(cameraLerp.x, cameraLerp.y, 0f);
+		camera.update();
 
-        screenShake.update(fixedStep);
+		screenShake.update(fixedStep);
 	}
 
 	private void processKeys() {
@@ -112,23 +120,126 @@ public class GameScreen extends Basic2DScreen {
 					beam.rotate(rel.angle());
 					beam.add(player.x(), player.y());
 
-					player.laserTarget.x = beam.x;
-					player.laserTarget.y = beam.y;
+					player.laserTarget.set(beam);
+					player.hitsEnemy = false;
 
-                    if (!screenShake.active) {
-                        screenShake.activate(0.1f, null);
-                    }
+					// check collision with walls
+					// int sx = MathUtils.round(player.x);
+					// int sy = MathUtils.round(player.y);
+					int sx = 0;
+					int sy = 0;
+					int ex = dungeon.tileMap.length;
+					int ey = dungeon.tileMap[0].length;
+					// Array<Vector2> hits = new Array<Vector2>(); // TODO
+					// MEMORY
+					Vector2 hit = new Vector2(beam);
+					for (int x = sx; x < ex; x++) {
+						for (int y = sy; y < ey; y++) {
+							if (dungeon.tileMap[x][y] == 0) { // TODO how do i
+																// shot web?
+								Vector2 pos = new Vector2(x, y);
+								Vector2 hitpos = lineRect(player.getPosition(),
+										player.laserTarget, pos, 1.0f);
 
-                    Assets.getGameSound(Assets.SOUND_LASER).loop();
+								if (hitpos != null
+										&& hitpos.dst(player.getPosition()) < hit
+												.dst(player.getPosition())) {
+									hit.set(hitpos);
+									// break;
+								}
+							}
+						}
+					}
+
+					// check for collision with entities
+					for (Entity e : entities) {
+						Array<Vector2> p = getCircleLineIntersectionPoint(
+								player.getPosition(), player.laserTarget,
+								e.getPosition(), 0.5f);
+
+						if (p.size > 0) {
+							Vector2 hitpos = p.first();
+							if (hitpos != null
+									&& hitpos.dst(player.getPosition()) < hit
+											.dst(player.getPosition())) {
+								hit.set(hitpos);
+								player.hitsEnemy = true;
+							}
+						}
+					}
+
+					player.laserTarget.set(hit);
+
+					if (!screenShake.active && player.hitsEnemy) {
+						screenShake.activate(0.1f, null);
+					}
+
+					// Assets.getGameSound(Assets.SOUND_LASER).loop();
 				} else {
-					 Assets.getGameSound(Assets.SOUND_LASER).stop();
+					// Assets.getGameSound(Assets.SOUND_LASER).stop();
 				}
 			}
 		}
 	}
 
+	private Vector2 lineRect(Vector2 position, Vector2 laserTarget,
+			Vector2 pos, float f) {
+		Vector2 p1 = position;
+		Vector2 p2 = laserTarget;
+		Vector2 p3 = new Vector2();
+		Vector2 p4 = new Vector2();
+		Vector2 intersection = new Vector2();
+		Vector2 closest = new Vector2();
+
+		// BOTTOM
+		p3.set(pos.x, pos.y);
+		p4.set(pos.x + f, pos.y);
+		boolean sect = false;
+		if (Intersector.intersectSegments(p1, p2, p3, p4, intersection)) {
+			sect = true;
+			closest.set(intersection);
+		}
+
+		// RIGHT
+		p3.set(pos.x + f, pos.y + f);
+		p4.set(pos.x + f, pos.y);
+		if (Intersector.intersectSegments(p1, p2, p3, p4, intersection)) {
+			if (closest.dst(playerPos) > intersection.dst(playerPos)) {
+				closest.set(intersection);
+				sect = true;
+			}
+		}
+
+		p3.set(pos.x, pos.y);
+		p4.set(pos.x, pos.y + f);
+		if (Intersector.intersectSegments(p1, p2, p3, p4, intersection)) {
+			if (closest.dst(playerPos) > intersection.dst(playerPos)) {
+				closest.set(intersection);
+				sect = true;
+			}
+		}
+
+		p3.set(pos.x + f, pos.y + f);
+		p4.set(pos.x, pos.y + f);
+		if (Intersector.intersectSegments(p1, p2, p3, p4, intersection)) {
+			if (closest.dst(playerPos) > intersection.dst(playerPos)) {
+				closest.set(intersection);
+				sect = true;
+			}
+		}
+
+		if (sect) {
+			return closest;
+		}
+
+		return null;
+	}
+
 	/**
-	 * *YOINK* http://stackoverflow.com/questions/13053061/circle-line-intersection-points
+	 * *YOINK*
+	 * http://stackoverflow.com/questions/13053061/circle-line-intersection
+	 * -points
+	 * 
 	 * @param pointA
 	 * @param pointB
 	 * @param center
@@ -173,15 +284,20 @@ public class GameScreen extends Basic2DScreen {
 		return ar;
 	}
 
+	private float renderTicks = 0.0f;
+
 	@Override
 	public void renderScreen(float delta) {
+		renderTicks += delta * 15;
+		float renderSin = MathUtils.sin(renderTicks);
 		spriteBatch.setProjectionMatrix(camera.combined);
 		spriteBatch.begin();
 
-//        spriteBatch.draw(Assets.getFullGameObject("background-temporary"), camera.position.x - 12f,
-//                camera.position.y - 8f, 24f, 16f);
+		// spriteBatch.draw(Assets.getFullGameObject("background-temporary"),
+		// camera.position.x - 12f,
+		// camera.position.y - 8f, 24f, 16f);
 
-        dungeon.render(delta, spriteBatch);
+		dungeon.render(delta, spriteBatch);
 
 		spriteBatch.end();
 
@@ -191,11 +307,21 @@ public class GameScreen extends Basic2DScreen {
 			Vector2 v1 = new Vector2(player.x(), player.y());
 			Vector2 v2 = player.laserTarget;
 
-			// check if the beam hits anything
 			sr.begin(ShapeType.Filled);
 			sr.setColor(Color.RED);
 			sr.rectLine(v1, v2, 0.25f);
 
+			if (player.hitsEnemy) {
+				Vector2 s = v2.cpy().scl(-1).add(v1).cpy().scl(-1);
+				s.scl(100f);
+				s.rotate(-1.5f + (renderSin * 1.5f)
+						+ MathUtils.random(-0.5f, 0.5f));
+				sr.rectLine(v2, s, 0.1f);
+			}
+			sr.end();
+
+			sr.begin(ShapeType.Filled);
+			sr.circle(v2.x, v2.y, 0.25f + 0.15f * (renderSin * 0.5f), 10);
 			sr.end();
 		}
 
@@ -207,19 +333,20 @@ public class GameScreen extends Basic2DScreen {
 		spriteBatch.end();
 
 		sr.begin(ShapeType.Line);
-        sr.rect(player.bounds.x, player.bounds.y, player.bounds.width, player.bounds.height);
+		sr.rect(player.bounds.x, player.bounds.y, player.bounds.width,
+				player.bounds.height);
 		for (Entity e : entities) {
 			sr.circle(e.x, e.y, 0.5f, 10);
 		}
 		sr.end();
 
-        spriteBatch.begin();
-        final Color originalColor = spriteBatch.getColor();
-        spriteBatch.setColor(1f, 1f, 1f, 1f);
-        spriteBatch.draw(Assets.getFullGameObject("darkness"),
-                camera.position.x - 12f, camera.position.y - 8f, 24f, 16f);
-        spriteBatch.setColor(originalColor);
-        spriteBatch.end();
+		spriteBatch.begin();
+		final Color originalColor = spriteBatch.getColor();
+		spriteBatch.setColor(1f, 1f, 1f, 1f);
+		spriteBatch.draw(Assets.getFullGameObject("darkness"),
+				camera.position.x - 12f, camera.position.y - 8f, 24f, 16f);
+		spriteBatch.setColor(originalColor);
+		spriteBatch.end();
 	}
 
 	@Override
@@ -227,7 +354,6 @@ public class GameScreen extends Basic2DScreen {
 		super.show();
 		Gdx.input.setInputProcessor(this);
 	}
-
 
 }
 //
