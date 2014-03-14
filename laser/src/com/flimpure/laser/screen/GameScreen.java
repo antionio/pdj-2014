@@ -19,6 +19,7 @@ import com.flimpure.laser.entity.Enemy;
 import com.flimpure.laser.entity.EnemyColor;
 import com.flimpure.laser.entity.Entity;
 import com.flimpure.laser.entity.Player;
+import com.flimpure.laser.entity.Player.Beam;
 import com.flimpure.laser.level.Dungeon;
 
 public class GameScreen extends Basic2DScreen {
@@ -60,12 +61,11 @@ public class GameScreen extends Basic2DScreen {
 	@Override
 	protected void updateScreen(float fixedStep) {
 		processKeys();
+		for (int i = 0; i < entities.size; i++) {
+			 entities.get(i).update(fixedStep);
+		}
 
 		player.update(fixedStep);
-
-		for (int i = 0; i < entities.size; i++) {
-			// entities.get(i).update(fixedStep);
-		}
 
 		dungeon.update(fixedStep);
 
@@ -95,6 +95,17 @@ public class GameScreen extends Basic2DScreen {
 					player.moveWithAccel(Direction.LEFT, Entity.ACCEL_MAX);
 				}
 
+				if (Gdx.input.isKeyPressed(Input.Keys.NUM_1)) {
+					player.currentBeam = Beam.RED;
+				}
+				if (Gdx.input.isKeyPressed(Input.Keys.NUM_2)) {
+					player.currentBeam = Beam.BLUE;
+				}
+				if (Gdx.input.isKeyPressed(Input.Keys.NUM_3)) {
+					player.currentBeam = Beam.GREEN;
+				}
+
+				
 				if (Gdx.input.isKeyPressed(Input.Keys.MINUS)) {
 					camera.zoom += 0.1f;
 					camera.update();
@@ -130,42 +141,46 @@ public class GameScreen extends Basic2DScreen {
 					int sy = 0;
 					int ex = dungeon.tileMap.length;
 					int ey = dungeon.tileMap[0].length;
-					// Array<Vector2> hits = new Array<Vector2>(); // TODO
-					// MEMORY
+
 					Vector2 hit = new Vector2(beam);
+					Vector2 playerPosition = player.getPosition();
 					for (int x = sx; x < ex; x++) {
 						for (int y = sy; y < ey; y++) {
 							if (dungeon.tileMap[x][y] == 0) { // TODO how do i
 																// shot web?
 								Vector2 pos = new Vector2(x, y);
-								Vector2 hitpos = lineRect(player.getPosition(),
+								Vector2 hitpos = lineRect(playerPosition,
 										player.laserTarget, pos, 1.0f);
 
 								if (hitpos != null
-										&& hitpos.dst(player.getPosition()) < hit
-												.dst(player.getPosition())) {
+										&& hitpos.dst(playerPosition) < hit
+												.dst(playerPosition)) {
 									hit.set(hitpos);
-									// break;
 								}
 							}
 						}
 					}
 
 					// check for collision with entities
+					Entity hitEntity = null;
 					for (Entity e : entities) {
 						Array<Vector2> p = getCircleLineIntersectionPoint(
-								player.getPosition(), player.laserTarget,
+								playerPosition, player.laserTarget,
 								e.getPosition(), 0.5f);
 
 						if (p.size > 0) {
 							Vector2 hitpos = p.first();
 							if (hitpos != null
-									&& hitpos.dst(player.getPosition()) < hit
-											.dst(player.getPosition())) {
+									&& hitpos.dst(playerPosition) < hit
+											.dst(playerPosition)) {
 								hit.set(hitpos);
 								player.hitsEnemy = true;
+								hitEntity = e;
 							}
 						}
+					}
+					if (hitEntity != null) {
+						hitEntity.onHit(player);
 					}
 
 					player.laserTarget.set(hit);
@@ -308,15 +323,29 @@ public class GameScreen extends Basic2DScreen {
 			Vector2 v2 = player.laserTarget;
 
 			sr.begin(ShapeType.Filled);
-			sr.setColor(Color.RED);
+			switch (player.currentBeam) {
+			case RED:
+				sr.setColor(Color.RED);
+				break;
+			case BLUE:
+				sr.setColor(Color.BLUE);
+				break;
+			case GREEN:
+				sr.setColor(Color.GREEN);
+				break;
+			}
 			sr.rectLine(v1, v2, 0.25f);
 
 			if (player.hitsEnemy) {
 				Vector2 s = v2.cpy().scl(-1).add(v1).cpy().scl(-1);
 				s.scl(100f);
 				s.rotate(-1.5f + (renderSin * 1.5f)
-						+ MathUtils.random(-0.5f, 0.5f));
+						+ MathUtils.random(-0.25f, 0.25f));
 				sr.rectLine(v2, s, 0.1f);
+				Vector2 s2 = s.rotate(-0f + (renderSin * 6f)
+						+ MathUtils.random(-0.5f, 0.5f)
+						);
+				sr.rectLine(v2, s2, 0.1f);
 			}
 			sr.end();
 

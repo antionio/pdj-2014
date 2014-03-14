@@ -15,7 +15,7 @@ public abstract class Entity {
     protected EntityState state;
     protected Direction direction = Direction.DOWN;
     public final Rectangle bounds = new Rectangle();
-    protected final Vector2 accel = new Vector2(0f, 0f);
+    public final Vector2 accel = new Vector2(0f, 0f);
     protected final Vector2 vel = new Vector2(0f, 0f);
     public float stateTime = 0f;
     public float pause = 0f;
@@ -57,6 +57,11 @@ public abstract class Entity {
         if (pause > 0f) {
             pause -= fixedStep;
         } else {
+        	
+        	if (!isAlive()) {
+        		return;
+        	}
+        	
             tryMove();
 
             x += vel.x;
@@ -200,6 +205,9 @@ public abstract class Entity {
         if (health <= 0f) {
             state = EntityState.DYING;
         }
+    }
+    
+    public void onHit(Player player) {
     }
 
 }

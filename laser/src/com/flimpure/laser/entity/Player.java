@@ -11,11 +11,17 @@ import com.flimpure.laser.tween.Vector2Accessor;
 
 public class Player extends Entity {
 
+	public enum Beam {
+		RED, BLUE, GREEN
+	}
+
 	/** The point where the player's laser currently fires at. */
 	public Vector2 laserTarget;
 	
 	/** Whether player is currently hitting an enemy. */
 	public boolean hitsEnemy;
+	
+	public Beam currentBeam = Beam.RED;
 
     private final TweenManager tweenManager = new TweenManager();
     private final Vector2 floatOffset = new Vector2();
