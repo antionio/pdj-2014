@@ -100,10 +100,10 @@ public class DungeonGenerator {
 		float baseNoise[][] = new float[width][height];
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
-				baseNoise[x][y] = random.nextInt(2);
+				baseNoise[x][y] = random.nextInt(3);
 			}
 		}
-		float perlin[][] = generatePerlinNoise(baseNoise, 2, 0.2f);
+		float perlin[][] = generatePerlinNoise(baseNoise, 2, 0.01f);
 		int[][] tileMap = new int[width][height];
 
 		for (int x = 0; x < width; x++) {
@@ -117,10 +117,12 @@ public class DungeonGenerator {
         int h = tileMap[0].length;
         for (int y = 0; y < h; y++) {
             for (int x = 0; x < w; x++) {
-                if (tileMap[x][y] < 4) {
+                if (tileMap[x][y] >= 0 && tileMap[x][y] <= 5) {
                     tileMap[x][y] = 0;
+                } else if (tileMap[x][y] >= 9 && tileMap[x][y] <= 9) {
+                    tileMap[x][y] = 9;
                 } else {
-                    tileMap[x][y] = 5;
+                    tileMap[x][y] = 6;
                 }
             }
         }
@@ -145,8 +147,8 @@ public class DungeonGenerator {
 					pixels[i] = 0x616161;
 				if (map[x][y] == 3)
 					pixels[i] = 0x616161;
-//				if (map[x][y] == 4)
-//					pixels[i] = 0x639C18;
+				if (map[x][y] == 4)
+					pixels[i] = 0x616161;
 //				if (map[x][y] == 5)
 //					pixels[i] = 0x7BC618;
 //				if (map[x][y] == 6)
@@ -156,10 +158,10 @@ public class DungeonGenerator {
 //					pixels[i] = 0x087B7B;
 //				if (map[x][y] == 8)
 //					pixels[i] = 0x006363;
-//				if (map[x][y] == 9)
-//					pixels[i] = 0x004A4A;
-//				if (map[x][y] == 10)
-//					pixels[i] = 0x003139;
+				if (map[x][y] == 9)
+					pixels[i] = 0x004A4A;
+				if (map[x][y] == 10)
+					pixels[i] = 0x004A4A;
 			}
 		}
 		img.setRGB(0, 0, w, h, pixels, 0, w);
